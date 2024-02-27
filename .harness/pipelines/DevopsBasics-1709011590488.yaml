@@ -1,0 +1,33 @@
+pipeline:
+  identifier: Build_deepak221306_DevopsBasics_1709011593852
+  name: Build DevopsBasics
+  orgIdentifier: default
+  projectIdentifier: javaproject
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github
+        repoName: deepak221306/DevopsBasics
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    command: echo hello world
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
