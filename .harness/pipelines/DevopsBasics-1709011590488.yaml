@@ -24,10 +24,26 @@ pipeline:
                     command: echo hello world
                   timeout: ""
                   type: Run
+              - step:
+                  type: Run
+                  name: WAR-FILE
+                  identifier: WARFILE
+                  spec:
+                    shell: Sh
+                    command: mvn clean install
+              - step:
+                  type: S3Upload
+                  name: S3Upload_war
+                  identifier: S3Upload_war
+                  spec:
+                    connectorRef: AWSConnector
+                    region: us-east-1
+                    bucket: webappupload
+                    sourcePath: /harness/target/webapp-1.war
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
