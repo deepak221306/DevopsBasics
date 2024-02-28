@@ -84,8 +84,13 @@ pipeline:
                         name: javatest
                         type: DownloadArtifact
                         spec:
-                          destinationPath: /opt/apache-tomcat-9.0.86/webapps/webapp-1.war
+                          destinationPath: /opt/apache-tomcat-9.0.86/webapps
+                    delegateSelectors:
+                      - docker-delegate
                   timeout: 10m
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
             rollbackSteps: []
         tags: {}
         failureStrategies:
