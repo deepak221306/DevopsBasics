@@ -85,9 +85,10 @@ pipeline:
                         type: DownloadArtifact
                         spec:
                           destinationPath: /opt/apache-tomcat-9.0.86/webapps
-                    delegateSelectors:
-                      - docker-delegate
                   timeout: 10m
+                  strategy:
+                    repeat:
+                      items: <+stage.output.hosts>
             rollbackSteps: []
         tags: {}
         failureStrategies:
@@ -96,8 +97,3 @@ pipeline:
                 - AllErrors
               action:
                 type: MarkAsFailure
-        delegateSelectors:
-          - docker-delegate
-        strategy:
-          repeat:
-            items: <+stage.output.hosts>
