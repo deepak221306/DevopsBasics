@@ -88,9 +88,6 @@ pipeline:
                     delegateSelectors:
                       - docker-delegate
                   timeout: 10m
-                  strategy:
-                    repeat:
-                      items: <+stage.output.hosts>
             rollbackSteps: []
         tags: {}
         failureStrategies:
