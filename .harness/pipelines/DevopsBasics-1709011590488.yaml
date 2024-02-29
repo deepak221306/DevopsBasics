@@ -56,14 +56,6 @@ pipeline:
           deploymentType: Ssh
           service:
             serviceRef: javaservice
-            serviceInputs:
-              serviceDefinition:
-                type: Ssh
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
           environment:
             environmentRef: prod
             deployToAll: false
