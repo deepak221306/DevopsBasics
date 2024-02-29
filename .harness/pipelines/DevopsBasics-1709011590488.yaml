@@ -48,14 +48,14 @@ pipeline:
             spec: {}
         type: CI
     - stage:
-        name: deployment
-        identifier: deployment
+        name: Deployment
+        identifier: Deployment
         description: ""
         type: Deployment
         spec:
           deploymentType: Ssh
           service:
-            serviceRef: prod
+            serviceRef: javaservice
             serviceInputs:
               serviceDefinition:
                 type: Ssh
@@ -65,10 +65,10 @@ pipeline:
                       primaryArtifactRef: <+input>
                       sources: <+input>
           environment:
-            environmentRef: QA
+            environmentRef: prod
             deployToAll: false
             infrastructureDefinitions:
-              - identifier: AwsInfra
+              - identifier: javainfra
           execution:
             steps:
               - step:
@@ -80,12 +80,18 @@ pipeline:
                     environmentVariables: []
                     outputVariables: []
                     commandUnits:
-                      - identifier: javatest
-                        name: javatest
+                      - identifier: javacmd
+                        name: javacmd
                         type: DownloadArtifact
                         spec:
                           destinationPath: /opt/apache-tomcat-9.0.86/webapps
                   timeout: 10m
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - AllErrors
+                        action:
+                          type: MarkAsFailure
                   strategy:
                     repeat:
                       items: <+stage.output.hosts>
@@ -97,3 +103,5 @@ pipeline:
                 - AllErrors
               action:
                 type: MarkAsFailure
+        delegateSelectors:
+          - docker-delegate
