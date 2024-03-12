@@ -30,7 +30,7 @@ pipeline:
                   identifier: WARFILE
                   spec:
                     shell: Sh
-                    command: mvn clean install
+                    command: mvn clean install -s /harness/settings.xml
               - step:
                   type: S3Upload
                   name: S3Upload_war
