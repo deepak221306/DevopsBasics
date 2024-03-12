@@ -92,20 +92,20 @@
 	</build>
 <repositories>
     <repository>
-      <id>central</id>
-      <url>https://us-central1-maven.pkg.dev/stalwart-city-415618/maven-virtual-demo</url>
+      <id>artifact-registry</id>
+      <url>https://us-central1-maven.pkg.dev/flash-hour-416607/virtualrepo</url>
       <releases>
         <enabled>true</enabled>
       </releases>
       <snapshots>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </snapshots>
     </repository>
-</repositories>
+  </repositories>
 <distributionManagement>
     <repository>
         <id>central</id>
-        <url>https://us-central1-maven.pkg.dev/stalwart-city-415618/maven-standard-demo</url>
+        <url>https://us-central1-maven.pkg.dev/flash-hour-416607/javamavendependency</url>
     </repository>
 </distributionManagement> 
 
