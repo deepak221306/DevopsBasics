@@ -31,7 +31,7 @@
     <repositories>
       <repository>
         <id>central</id>
-          <url>https://asia-south1-maven.pkg.dev/booming-entity-414410/virtualmavenrepo</url>
+          <url></url>
           <releases>
             <enabled>true</enabled>
           </releases>
