@@ -105,3 +105,4 @@ pipeline:
                 type: MarkAsFailure
         delegateSelectors:
           - docker-delegate
+  allowStageExecutions: true
