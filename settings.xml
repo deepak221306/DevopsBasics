@@ -27,33 +27,33 @@
     </server>
   </servers>
 <profiles>
-<profile>
-<repositories>
-<repository>
-<id>central</id>
-<url>https://asia-south1-maven.pkg.dev/booming-entity-414410/virtualmavenrepo</url>
-<releases>
-<enabled>true</enabled>
-</releases>
-<snapshots>
-<enabled>false</enabled>
-</snapshots>
-</repository>
-</repositories>
-<pluginRepositories>
-<pluginRepository>
-<id>central</id>
-<url>https://asia-south1-maven.pkg.dev/booming-entity-414410/virtualmavenrepo</url>
-<releases>
-<enabled>true</enabled>
-</releases>
-<snapshots>
-<enabled>false</enabled>
-</snapshots>
-</pluginRepository>
-</pluginRepositories>
-<id>central</id>
-</profile>
+  <profile>
+    <repositories>
+      <repository>
+        <id>central</id>
+          <url>https://asia-south1-maven.pkg.dev/booming-entity-414410/virtualmavenrepo</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+          <enabled>false</enabled>
+          </snapshots>
+      </repository>
+  </repositories>
+  <pluginRepositories>
+      <pluginRepository>
+        <id>central</id>
+          <url>https://asia-south1-maven.pkg.dev/booming-entity-414410/virtualmavenrepo</url>
+        <releases>
+          <enabled>true</enabled>
+        </releases>
+        <snapshots>
+          <enabled>false</enabled>
+        </snapshots>
+      </pluginRepository>
+  </pluginRepositories>
+  <id>central</id>
+  </profile>
 </profiles>
 <activeProfiles>
 <activeProfile>central</activeProfile>
