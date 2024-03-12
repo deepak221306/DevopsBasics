@@ -31,7 +31,7 @@
     <repositories>
       <repository>
         <id>central</id>
-          <url></url>
+          <url>https://us-central1-maven.pkg.dev/flash-hour-416607/virtualrepo</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -43,7 +43,7 @@
   <pluginRepositories>
       <pluginRepository>
         <id>central</id>
-          <url>https://asia-south1-maven.pkg.dev/booming-entity-414410/virtualmavenrepo</url>
+          <url>https://us-central1-maven.pkg.dev/flash-hour-416607/virtualrepo</url>
         <releases>
           <enabled>true</enabled>
         </releases>
